@@ -12,3 +12,7 @@ if (idade >= 18) {
     cal = "maior de idade"
 }
 console.log(`Eu tenho ${idade} anos. Então eu sou ${cal}`)
+console.log(`Minha paciência com essa sintaxe fotoshopada de C caindo em:`)
+for (let i = 5; i > -1; i--) {
+    console.log(i)
+}
