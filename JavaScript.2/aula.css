@@ -1,4 +1,9 @@
-body {background-color: rgba(43, 147, 173, 0.829);}
-main {font-family: Arial, Helvetica, sans-serif;}
-h1 {color: white;}
-p {color: white;}
+body {background-color: rgba(43, 147, 173, 0.829); font-family: Arial, Helvetica, sans-serif;
+    color: black; font: normal;}
+
+header {margin:auto; color: white; text-align: center;}
+
+section {background-color: white; border-radius: 10px; padding: 15px; width: 500px; margin:auto;
+box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.575);}
+
+footer {margin:auto; color: white; text-align: center;}
