@@ -9,11 +9,25 @@
 <body>
 
     <header>
-        <h1>Título</h1>
+        <h1>Calculadora de Produtos</h1>
     </header>
 
     <section>
-        <p>Teste</p>
+        <p>Nome do Produto:
+            <input type="text" name="product" id="product">
+        </p>
+        <p>Preço do produto:
+            <input type="number" name="bought_product" id="bought_product" min="0">
+        </p>
+        <p>Peso do produto (kg/uni):
+            <input type="number" name="weight_product" id="weight_product" min="0">
+        </p>
+        <p>Peso usado (kg/uni):
+            <input type="number" name="weight_used" id="weight_used" min="0">
+        </p>
+        <p>
+            <input type="button" value="Verificar" onclick="verificar">
+        </p>
     </section>
 
     <footer>
