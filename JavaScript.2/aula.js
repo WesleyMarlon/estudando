@@ -1,9 +1,14 @@
-var idade = 15
+var agora = new Date
+var hora = agora.getHours()
+var min = agora.getMinutes()
+console.log(`Agora são exatamente ${hora} horas e ${min} minutos.`)
 
-if ( idade < 16 ) {
-    console.log('Voto nulo')
-} else if ( idade < 18 || idade > 65 ) {
-    console.log('Voto opcional')
-} else {
-    console.log('Voto obrigatório')
+if ( hora < 12 && hora > 6 ) {
+    console.log('Bom dia')
+}
+else if ( hora > 12 && hora < 18) {
+    console.log('Boa tarde')
+}
+else {
+    console.log('Boa noite')
 }
