@@ -1,14 +1,38 @@
-var agora = new Date
-var hora = agora.getHours()
-var min = agora.getMinutes()
-console.log(`Agora são exatamente ${hora} horas e ${min} minutos.`)
+let bought = document.getElementById('bought_product')
+let weight = document.getElementById('weight_product')
+let weight_used = document.getElementById('weight_used')
+let result = document.getElementById('result')
+let produtos = document.getElementById('produtos')
+let adicionar = document.getElementById('adicionar')
 
-if ( hora < 12 && hora > 6 ) {
-    console.log('Bom dia')
+
+// Calcular
+function calcular() {
+    let value = Number(bought.value)
+    let quantity = Number(weight.value)
+    let used = Number(weight_used.value)
+
+    if (value && quantity && used) {
+        let cost = value / quantity * used
+
+        result.textContent = `R$ ${cost.toFixed(2).replace('.', ',')}`
+    }
 }
-else if ( hora > 12 && hora < 18) {
-    console.log('Boa tarde')
-}
-else {
-    console.log('Boa noite')
-}
+
+bought.addEventListener('input', calcular)
+weight.addEventListener('input', calcular)
+weight_used.addEventListener('input', calcular)
+
+
+// Adicionar linha
+adicionar.addEventListener('click', function() {
+    produtos.innerHTML += `
+        <tr>
+            <td><input type="text"></td>
+            <td><input type="number" min="0"></td>
+            <td><input type="number" min="0"></td>
+            <td><input type="number" min="0"></td>
+            <td><output>R$ 0,00</output></td>
+        </tr>
+    `
+})
