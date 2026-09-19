@@ -7,73 +7,44 @@
     <link rel="stylesheet" href="aula.css">
 </head>
 <body>
-
     <header>
-        <h1>Calculadora de Produtos</h1>
+        <h1>Calculadora</h1>
     </header>
 
-    <section>
-        <p>Nome do Produto:
-            <input type="text" name="product" id="product">
-        </p>
-        <p>Preço do produto:
-            <input type="number" name="bought_product" id="bought_product" min="0">
-        </p>
-        <p>Peso do produto (kg/uni):
-            <input type="number" name="weight_product" id="weight_product" min="0">
-        </p>
-        <p>Peso usado (kg/uni):
-            <input type="number" name="weight_used" id="weight_used" min="0">
-        </p>
-        <p>
-            <input type="button" value="Verificar" onclick="verificar">
-        </p>
-    </section>
+    <main>
+        
+        <section>
+            <p>Descubra de forma simples e rápida quanto você está gastando em cada produto utilizado. 
+                Informe o nome do produto, seu preço, a quantidade total adquirida e quanto foi utilizado. 
+                A calculadora irá calcular automaticamente o custo proporcional da quantidade utilizada.</p>
+        </section>
 
-    <section>
+        <section>
             <div>
                 <table class="TabelaPadrão">
-                    <caption>Basic - Conectores (Nv1)</caption>
+                    <caption>Calculadora de Produtos</caption>
                     <thead>
                         <tr>
-                            <th>English</th><th>Portuguese</th><th>Sentence</th>
+                            <th>Nome do Produto:</th><th>Preço:</th><th>Peso (kg/uni):</th>
+                            <th>Peso usado (kg/uni):</th><th>Resultado:</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="produtos">
                         <tr>
-                            <td>But</td>
-                            <td>Mas</td>
-                            <td>But why? = Mas por quê?</td>
-                        </tr>
-                        <tr>
-                            <td>And</td>
-                            <td>E</td>
-                            <td>I like it and oranges = Eu gosto disso e de laranjas</td>
-                        </tr>
-                        <tr>
-                            <td>Or</td>
-                            <td>Ou</td>
-                            <td>Yes or no? = Sim ou não?</td>
-                        </tr>
-                        <tr>
-                            <td>Because</td>
-                            <td>Porque</td>
-                            <td>I study English because I like it = Eu estudo inglês porque eu gosto</td>
-                        </tr>
-                        <tr>
-                            <td>So</td>
-                            <td>Então / Por isso</td>
-                            <td>It's so cute = Isso é tão fofo</td>
-                        </tr>
-                        <tr>
-                            <td>If</td>
-                            <td>Se</td>
-                            <td>If I eat oranges, I'm happy = Se eu como laranjas, fico feliz</td>
+                            <td><input type="text" name="product" id="product"></td>
+                            <td><input type="number" name="bought_product" id="bought_product" min="0"></td>
+                            <td><input type="number" name="weight_product" id="weight_product" min="0"></td>
+                            <td><input type="number" name="weight_used" id="weight_used" min="0"></td>
+                            <td><output id="result">R$ 0,00</output></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
+
+        <button id="adicionar">Adicionar</button>
+        
+    </main>
 
     <footer>
         <p>@Wesley</p>
