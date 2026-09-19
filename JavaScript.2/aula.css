@@ -1,9 +1,158 @@
-body {background-color: rgba(43, 147, 173, 0.829); font-family: Arial, Helvetica, sans-serif;
-    color: black; font: normal;}
+* {margin: 0; padding: 0; box-sizing:border-box;}
+html {scroll-padding-top: 100px;}
+img {max-width: 100%; height: auto; display: block;}
 
-header {margin:auto; color: white; text-align: center;}
+/* Fundo Principal ( body ) */
+body {background: var(--bg-body);margin: 0;padding: 0;font-family: Arial, Helvetica, sans-serif;color: var(--text);}
 
-section {background-color: white; border-radius: 10px; padding: 15px; width: 500px; margin:auto;
-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.575);}
+/* == Dark Mode == */
+:root {--bg: #ffffff;--bg-header: rgba(6, 46, 36, 0.85);--bg-card: #ffffff;--bg-box: #0f6962;--bg-body: #33aca0;
+--text: #0f172a;--text-header: #ffffff;--text-muted: #475569;--text-invert: #ffffff; --menu: #00d41c;
+--accent: #115f1e;--accent-hover: #4caf50;--border: #e2e8f0;--shadow: rgba(0, 0, 0, 0.15);
+--bg-caixa: #1e3a34;--bg-caixa-hover: #25463f; --bg-footer: #062e24; --caption: #0c493f;}
 
-footer {margin:auto; color: white; text-align: center;}
+[data-theme="dark"] {--bg: #0f172a;--bg-header: rgba(2, 6, 23, 0.85);--bg-card: #1e293b;--bg-box: #134e4a;
+--bg-body: #0a1518;--text: #e2e8f0;--text-header: #ffffff;--text-muted: #94a3b8;--text-invert: #0f172a;
+--accent: #34d399;--accent-hover: #28a074;--border: #334155;--shadow: rgba(0, 0, 0, 0.4); --bg-footer: #020617;
+--caption: #0c3649; --bg-box: #0f5069; --menu: #28a074;}
+
+[data-theme="dark"] .Caixa {background: #292B3A;border: 1px solid #334155;
+box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05),0 2px 8px rgba(0, 0, 0, 0.4);}
+[data-theme="dark"] .Caixa:hover {background: #334155;}
+[data-theme="dark"] .Caixa h3 {color: #e2e8f0;}
+[data-theme="dark"] .Caixa p {color: #94a3b8;}
+
+[data-theme="dark"] .coluna li::before {color: #5384f8;}
+[data-theme="dark"] mark {background-color: #34d399;color: #0f172a;}
+[data-theme="dark"] code {background: #334155;color: #e2e8f0;}
+
+[data-theme="dark"] #box-menu {background: #13384e;border: 1px solid #0f3d38;}
+[data-theme="dark"] #box-menu strong {color: #34b3d3;}
+[data-theme="dark"] #box-menu a:hover {background: #0f2e3d;}
+
+[data-theme="dark"] mark {background-color: #2b8ac2;color: #000; /* Verde água pra letra */border: 1px solid #065f46;}
+
+/* ==== HEADER ==== */
+header {background-color: var(--bg-header);backdrop-filter: blur(12px);border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+padding: 20px 40px;display: flex;justify-content: space-between;align-items: center;box-shadow: 0 4px 12px var(--shadow);
+position: sticky;top: 0;z-index: 100;}
+
+header h1 {font-size: 28px;font-weight: 800;letter-spacing: -1px;color: var(--text-header);}
+header nav a {color: var(--text-header);text-decoration: none;font-weight: 500;opacity: 0.8;transition: 0.2s;}
+header nav a:hover {opacity: 1;color: var(--accent-hover);}
+header nav ul {align-items: center;}
+header nav a,#btn-menu,#btn-theme {font-size: 1.05rem !important;line-height: 1;padding: 6px 10px;}
+
+
+/* == MENU == */
+nav li {position: relative}
+#btn-menu, #btn-theme {background: none;border: none;color: #ffffff;opacity: 0.8;font: inherit;cursor: pointer;
+padding: 6px 10px;font-size: 0.875rem;line-height: 1;display: inline-flex;align-items: center;}
+
+#btn-menu:hover, #btn-theme:hover {opacity: 1;color: var(--menu);}
+#box-menu {position: absolute;right: 0;top: 100%;margin-top: 8px;background: #164b45;border: 1px solid #2a5a57;
+border-radius: 8px;padding: 12px;min-width: 220px;z-index: 100;backdrop-filter: none;}
+
+#box-menu strong {display: block;font-size: 16px;margin: 8px 0 4px;opacity: 1;color: #00df1e;font-weight: 600;}
+#box-menu strong:first-child {margin-top: 0}
+#box-menu a {display: block;padding: 4px 8px;font-size: 16px;white-space: nowrap;border-radius: 4px;color: #ffffff;text-decoration: none;}
+#box-menu a:hover {background: #2a5a57;color: #ffffff;}
+
+/* == MAIN == */
+main {position: relative;z-index: 1;background: var(--bg-card);max-width: 1200px;margin: -40px auto -20px;
+padding: 80px 40px 60px;border-radius: 12px;box-shadow: 0 8px 24px var(--shadow);}
+
+main h1 {font-size: 38px;color: var(--text);margin: 0 auto 20px;text-align: center;line-height: 1.2;max-width: 1200px;}
+main h2 {font-size: 32px;color: var(--text);margin: 0 auto 20px;text-align: center;line-height: 1.2;max-width: 1200px;}
+main h3 {font-size: 26px;color: var(--text);margin-top: 20px;}
+main p {font-size: 18px;color: var(--text);line-height: 1.6;max-width: 1100px;margin: 0 auto;margin-bottom: 1.2rem;}
+main code {background: var(--border);color: var(--text);padding: 2px 6px;
+border-radius: 3px;font-family: 'Consolas', 'Monaco', monospace;font-size: 0.9em;}
+
+/* == EXTRAS == */
+nav ul {list-style: none; display: flex; gap: 30px;}
+a {color: var(--accent);}
+a:hover {color: var(--accent-hover);}
+details {color: var(--accent); text-align: left; font-size: 18px; line-height: 1.7;}
+details:hover {color: var(--accent-hover);}
+pre {background: #1e1e1e;color: #d4d4d4;padding: 16px;border-radius: 8px;overflow-x: auto;
+font-family: 'Consolas', 'Monaco', monospace;font-size: 14px;line-height: 1.5;margin: 20px 0;}
+
+.pagina h3 {font-size: 20px; text-align: center; margin-bottom: 6px;} .pagina p {text-align: center;}
+.pagina strong {background-color: #0c4249; margin-right: 4px; padding: 2px; border-radius: 25%;}
+
+/* == MARK == */
+mark {background-color: #3bff93; color: #000; font-family: 'Consolas', 'Monaco', monospace;
+font-size: 0.9em; font-weight: 600; padding: 2px 6px; border-radius: 4px; white-space: nowrap;
+box-decoration-break: clone; border: 1px solid #a7f3d0;}
+
+/* TabelaPadrão */
+.TabelaPadrão {width: 80%;border-collapse: collapse;margin: 24px auto;font-size: 14px;color: var(--text);}
+caption {text-align: center;font-size: 20px;padding: 12px;background-color: var(--caption);color: var(--text-header);}
+.TabelaPadrão thead th {background-color: var(--bg-box);color: var(--text-header);text-align: center;padding: 6px 6px;border: 1px solid var(--border);}
+.TabelaPadrão th, .TabelaPadrão td {border: 1px solid var(--border);padding: 12px 16px;text-align: left;}
+.TabelaPadrão tbody tr:nth-child(even) {background-color: var(--bg-card);}
+.TabelaPadrão tbody tr:hover {background-color: var(--border);}
+
+/* input */
+input {font-size: 20px; text-align: center; width: 100%; box-sizing: border-box;}
+
+#result {display: inline-block;width: 160px;height: 26px; padding: 2px 5px; border: 1px solid #999; background-color: white;
+color: black; text-align: center; box-sizing: border-box; font-size: 20px; }
+
+/* == FOOTER == */
+footer {background-color: var(--bg-footer);text-align: center;padding: 20px;margin-top: 0px;position: relative;z-index: 10;box-shadow: 0 -4px 12px var(--shadow);}
+footer p {margin-bottom: 16px; color: var(--text-header);}
+footer .social {display: flex; justify-content: center; gap: 10px;}
+footer a {display: inline-flex;align-items: center;justify-content: center;min-width: 48px;min-height: 48px;border-radius: 8px;transition: background-color 0.2s;}
+footer a:hover {background-color: rgba(64, 224, 208, 0.1);}
+footer a img {width: 24px; height: 24px; filter: brightness(0) invert(1);}
+
+/* ==== MOBILE ==== */
+@media (max-width: 768px) {
+  /* == HEADER == */
+  header {padding: 12px 16px; flex-direction: column; align-items: flex-start; gap: 12px;}
+  header h1 {font-size: 1.25rem;}
+  header nav {width: 100%}
+  nav ul {gap: 8px; overflow-x: auto; scrollbar-width: none; padding-bottom: 4px;}
+  nav ul::-webkit-scrollbar {display: none}
+  header nav a {font-size: 0.875rem; padding: 6px 10px; border-radius: 6px; white-space: nowrap;}
+  header nav a:active {background: rgba(255,255,255,.15)}
+
+  /* == TEXT == */
+  main {padding: 24px 16px; margin: -12px 12px 0; border-radius: 8px;}
+  main h1 {font-size: 1.625rem; line-height: 1.25; margin-bottom: 16px;}
+  main h2 {font-size: 1.375rem;}
+  main h3 {font-size: 1.125rem;}
+  main p {font-size: 0.9375rem; line-height: 1.65; margin-bottom: 1rem;}
+
+  /* == CAIXAS == */
+  .Modulos {padding: 24px 16px}
+  .Modulos h2 {font-size: 1.5rem; margin-bottom: 24px;}
+  .Caixas {grid-template-columns: 1fr; gap: 12px;}
+  .Caixa {padding: 16px; border-radius: 12px;}
+  .Caixa h3 {font-size: 1.25rem; margin-bottom: 8px;}
+  .Caixa p {font-size: 0.875rem; line-height: 1.5;}
+  .Caixa:active {transform: scale(0.98);}
+
+  /* == COLUNA DUPLA == */
+  .ColunaDupla {flex-direction: column; gap: 24px; padding: 0; margin: 20px 0;}
+  .coluna {width: 100%}
+  .coluna h2 {font-size: 1.375rem; text-align: left;}
+  .coluna h3 {font-size: 1.125rem}
+  .coluna p {font-size: 0.9375rem}
+  .coluna li {font-size: 0.9375rem; margin-bottom: 8px;}
+
+  /* == MENU == */
+  nav li {position: static}
+  #box-menu {position: fixed;left: 12px;right: 12px;top: auto;margin-top: 8px;width: auto;max-width: none;}
+  #box-menu a {font-size: 0.9375rem;padding: 10px 12px;}
+
+  /* == EXTRAS == */
+  pre, .Codigo {font-size: 12px; padding: 12px; margin: 16px -16px; border-radius: 0;}
+  mark {font-size: 0.8125rem; white-space: normal;}
+  .TabelaPadrão, .TabelaNivel {font-size: 13px; margin: 16px -16px; width: calc(100% + 32px);}
+  
+  footer {padding: 24px 16px}
+  footer a {min-width: 44px; min-height: 44px}
+}
