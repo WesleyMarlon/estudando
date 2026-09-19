@@ -4,6 +4,8 @@ let weight_used = document.getElementById('weight_used')
 let result = document.getElementById('result')
 let produtos = document.getElementById('produtos')
 let adicionar = document.getElementById('adicionar')
+let remover = document.getElementById('remover')
+let total = document.getElementById('total')
 
 function calcular(linha) {
     let bought = linha.querySelector('.bought_product')
@@ -58,4 +60,24 @@ adicionar.addEventListener('click', function() {
     let novaLinha = produtos.lastElementChild
 
     ativarCalculo(novaLinha)
+})
+
+remover.addEventListener('click', function() {
+    let ultimaLinha = produtos.lastElementChild
+
+    if (produtos.children.length > 1) {
+        ultimaLinha.remove()
+    }
+})
+
+total.addEventListener('click', function() {
+    let resultados = produtos.querySelectorAll('.result')
+    let soma = 0
+
+    resultados.forEach(function(resultado) {
+        let valor = resultado.textContent.replace('R$ ', '').replace(',', '.')
+        soma += Number(valor)
+    })
+
+    console.log(`Total: R$ ${soma.toFixed(2).replace('.', ',')}`)
 })
