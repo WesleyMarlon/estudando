@@ -5,9 +5,12 @@ let result = document.getElementById('result')
 let produtos = document.getElementById('produtos')
 let adicionar = document.getElementById('adicionar')
 
+function calcular(linha) {
+    let bought = linha.querySelector('.bought_product')
+    let weight = linha.querySelector('.weight_product')
+    let weight_used = linha.querySelector('.weight_used')
+    let result = linha.querySelector('.result')
 
-// Calcular
-function calcular() {
     let value = Number(bought.value)
     let quantity = Number(weight.value)
     let used = Number(weight_used.value)
@@ -19,20 +22,40 @@ function calcular() {
     }
 }
 
-bought.addEventListener('input', calcular)
-weight.addEventListener('input', calcular)
-weight_used.addEventListener('input', calcular)
+function ativarCalculo(linha) {
+    let bought = linha.querySelector('.bought_product')
+    let weight = linha.querySelector('.weight_product')
+    let weight_used = linha.querySelector('.weight_used')
 
+    bought.addEventListener('input', function() {
+        calcular(linha)
+    })
 
-// Adicionar linha
+    weight.addEventListener('input', function() {
+        calcular(linha)
+    })
+
+    weight_used.addEventListener('input', function() {
+        calcular(linha)
+    })
+}
+
+let primeiraLinha = produtos.querySelector('tr')
+
+ativarCalculo(primeiraLinha)
+
 adicionar.addEventListener('click', function() {
-    produtos.innerHTML += `
+    produtos.insertAdjacentHTML('beforeend', `
         <tr>
-            <td><input type="text"></td>
-            <td><input type="number" min="0"></td>
-            <td><input type="number" min="0"></td>
-            <td><input type="number" min="0"></td>
-            <td><output>R$ 0,00</output></td>
+            <td><input class="product" type="text"></td>
+            <td><input class="bought_product" type="number" min="0"></td>
+            <td><input class="weight_product" type="number" min="0"></td>
+            <td><input class="weight_used" type="number" min="0"></td>
+            <td><output class="result">R$ 0,00</output></td>
         </tr>
-    `
+    `)
+
+    let novaLinha = produtos.lastElementChild
+
+    ativarCalculo(novaLinha)
 })
