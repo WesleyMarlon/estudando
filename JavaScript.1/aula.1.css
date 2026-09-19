@@ -3,10 +3,3 @@ main {font-family: Arial, Helvetica, sans-serif;}
 h1 {color: white;}
 p {color: white;}
 
-/* TabelaPadrão */
-.TabelaPadrão {width: 70%;border-collapse: collapse;margin: 24px auto;font-size: 14px;color: var(--text);}
-caption {text-align: center;font-size: 20px;padding: 12px;background-color: var(--caption);color: var(--text-header);}
-.TabelaPadrão thead th {background-color: var(--bg-box);color: var(--text-header);text-align: left;padding: 12px 16px;border: 1px solid var(--border);}
-.TabelaPadrão th, .TabelaPadrão td {border: 1px solid var(--border);padding: 12px 16px;text-align: left;}
-.TabelaPadrão tbody tr:nth-child(even) {background-color: var(--bg-card);}
-.TabelaPadrão tbody tr:hover {background-color: var(--border);}
