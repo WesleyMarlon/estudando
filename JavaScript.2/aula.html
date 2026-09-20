@@ -57,23 +57,29 @@
 
         <section>
             <p>Descubra o custo e o lucro de cada unidade do seu produto. Informe o custo total da produção, a quantidade de 
-                unidades geradas e o preço de venda por unidade. Nossa calculadora dividirá o custo total pela quantidade produzida e 
+                unidades geradas e o preço de venda total. Nossa calculadora dividirá o custo total pela quantidade produzida e 
                 mostrará o custo de cada unidade, permitindo comparar com o preço de venda e descobrir seu lucro real.</p>
         </section>
         
         <section>
             <div>
                 <table class="TabelaPadrão">
+                    <caption>Calculadora de Lucro</caption>
                     <thead>
                         <tr>
                             <th>Resultado</th>
                             <th>Unidade</th>
-                            <th>Venda</th>
+                            <th>Venda por
+                                <select id="tipo_venda">
+                                    <option value="unidade">Unidade</option>
+                                    <option value="total">Total</option>
+                                </select>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><input type="number" name="product" id="result_final_2"></td>
+                            <td><input type="number" name="result" id="result_final_2"></td>
                             <td><input type="number" name="unided" id="unided" min="0"></td>
                             <td><input type="number" name="sell" id="sell" min="0"></td>
                         </tr>
