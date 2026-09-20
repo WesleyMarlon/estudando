@@ -25,8 +25,8 @@
                     <caption>Calculadora de Produtos</caption>
                     <thead>
                         <tr>
-                            <th>Nome do Produto:</th><th>Preço:</th><th>Peso (kg/uni):</th>
-                            <th>Usado (kg/uni):</th><th>Resultado:</th>
+                            <th>Nome do Produto</th><th>Preço</th><th>Peso (kg/uni)</th>
+                            <th>Usado (kg/uni)</th><th>Resultado</th>
                         </tr>
                     </thead>
                     <tbody id="produtos">
@@ -68,9 +68,30 @@
                         <tr>
                             <th>Resultado</th>
                             <th>Unidade</th>
-                            <th>Custo por unidade</th>
+                            <th>Venda</th>
                         </tr>
                     </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="number" name="product" id="result_final_2"></td>
+                            <td><input type="number" name="unided" id="unided" min="0"></td>
+                            <td><input type="number" name="sell" id="sell" min="0"></td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr>
+                            <th>Custo por unidade</th>
+                            <th>Venda por unidade</th>
+                            <th>Lucro por unidade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><output class="result" id="cost_unided">R$ 0,00</output></td>
+                            <td><output class="result" id="sell_unided">R$ 0,00</output></td>
+                            <td><output class="result" id="profit_unided">R$ 0,00</output></td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </section>
