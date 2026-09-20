@@ -26,7 +26,7 @@
                     <thead>
                         <tr>
                             <th>Nome do Produto:</th><th>Preço:</th><th>Peso (kg/uni):</th>
-                            <th>Peso usado (kg/uni):</th><th>Resultado:</th>
+                            <th>Usado (kg/uni):</th><th>Resultado:</th>
                         </tr>
                     </thead>
                     <tbody id="produtos">
@@ -41,10 +41,22 @@
                 </table>
             </div>
         </section>
-
-        <button id="adicionar">Adicionar</button>
-        <button id="remover">Remover</button>
-        <button id="total">Total</button>
+        
+        <section>
+            <div>
+                <table class="TabelaPadrão">
+                    <thead>
+                        <tr>
+                            <th><button id="adicionar">Adicionar</button></th><th><button id="remover">Remover</button></th>
+                            <th><button id="total">Total</button> <output class="result" id="result_final">R$ 0,00</output></th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </section>
+        
+        
+        
 
     </main>
 
