@@ -8,6 +8,7 @@ let remover = document.getElementById('remover')
 let total = document.getElementById('total')
 let result_final = document.getElementById('result_final')
 
+// Calcular
 function calcular(linha) {
     let bought = linha.querySelector('.bought_product')
     let weight = linha.querySelector('.weight_product')
@@ -25,6 +26,7 @@ function calcular(linha) {
     }
 }
 
+// Calcular nova linha
 function ativarCalculo(linha) {
     let bought = linha.querySelector('.bought_product')
     let weight = linha.querySelector('.weight_product')
@@ -63,6 +65,7 @@ adicionar.addEventListener('click', function() {
     ativarCalculo(novaLinha)
 })
 
+// Remover linha
 remover.addEventListener('click', function() {
     let ultimaLinha = produtos.lastElementChild
 
@@ -71,6 +74,7 @@ remover.addEventListener('click', function() {
     }
 })
 
+// Somar tudo
 total.addEventListener('click', function() {
     let resultados = produtos.querySelectorAll('.result')
     let soma = 0
