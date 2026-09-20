@@ -7,6 +7,14 @@ let adicionar = document.getElementById('adicionar')
 let remover = document.getElementById('remover')
 let total = document.getElementById('total')
 let result_final = document.getElementById('result_final')
+let result_final_2 = document.getElementById('result_final_2')
+let unided = document.getElementById('unided')
+let sell = document.getElementById('sell')
+let cost_unided = document.getElementById('cost_unided')
+let sell_unided = document.getElementById('sell_unided')
+let profit_unided = document.getElementById('profit_unided')
+let tipo_venda = document.getElementById('tipo_venda')
+
 
 // Calcular
 function calcular(linha) {
@@ -85,4 +93,54 @@ total.addEventListener('click', function() {
     })
 
     result_final.textContent = `R$ ${soma.toFixed(2).replace('.', ',')}`
+    result_final_2.value = soma.toFixed(2)
 })
+
+// Calcular lucro
+function calcular_lucro() {
+    let resultfinal = Number(result_final_2.value)
+    let unided = Number(document.getElementById('unided').value)
+    let sell = Number(document.getElementById('sell').value)
+
+    if (resultfinal && unided) {
+        let cost = resultfinal / unided
+
+        cost_unided.textContent = `R$ ${cost.toFixed(2).replace('.', ',')}`
+    }
+
+    if (sell && unided) {
+
+        let sell_unidede
+
+        if (tipo_venda.value == 'unidade') {
+            sell_unidede = sell
+        }
+
+        if (tipo_venda.value == 'total') {
+            sell_unidede = sell / unided
+        }
+
+        sell_unided.textContent = `R$ ${sell_unidede.toFixed(2).replace('.', ',')}`
+    }
+
+    if (resultfinal && sell && unided) {
+        let cost = resultfinal / unided
+        let sell_unidede
+
+        if (tipo_venda.value == 'unidade') {
+            sell_unidede = sell
+        }
+
+        if (tipo_venda.value == 'total') {
+            sell_unidede = sell / unided
+        }
+
+        let profit = sell_unidede - cost
+
+        profit_unided.textContent = `R$ ${profit.toFixed(2).replace('.', ',')}`
+    }
+}
+
+unided.addEventListener('input', calcular_lucro)
+sell.addEventListener('input', calcular_lucro)
+tipo_venda.addEventListener('change', calcular_lucro)
