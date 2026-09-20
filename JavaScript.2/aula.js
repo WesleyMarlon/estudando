@@ -6,6 +6,7 @@ let produtos = document.getElementById('produtos')
 let adicionar = document.getElementById('adicionar')
 let remover = document.getElementById('remover')
 let total = document.getElementById('total')
+let result_final = document.getElementById('result_final')
 
 function calcular(linha) {
     let bought = linha.querySelector('.bought_product')
@@ -79,5 +80,5 @@ total.addEventListener('click', function() {
         soma += Number(valor)
     })
 
-    console.log(`Total: R$ ${soma.toFixed(2).replace('.', ',')}`)
+    result_final.textContent = `R$ ${soma.toFixed(2).replace('.', ',')}`
 })
